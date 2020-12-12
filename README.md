@@ -24,3 +24,19 @@ git clone https://github.com/pks-97/SASCW-ROS.git
 ```
 cd catkin_scw
 ```
+```
+catkin_make
+```
+```
+source devel/setup.bash
+```
+```
+cd build
+```
+```
+GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH 
+```
+```
+cd ..
+cd Real_Assembly gazebo.launch
+```
