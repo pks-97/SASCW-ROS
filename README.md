@@ -59,4 +59,15 @@ roslaunch odom_to_trajectory create_trajectory.launch
 rosrun rviz rviz
 ```
 In rviz set the **fixed frame = odom** and the **reference frame = base_link**
+## Results
+The path made by visual odometry is marked by the **red** trajectory and the **green** tracjectory marks the combined path.
 
+<p align="center">
+  <img width="300" height="300" src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/Robot_Path.jpeg">
+</p>
+
+<p align="center">
+  <img width="300" height="300" src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/path.jpeg">
+</p>
+
+**Note: For getting a good odometry estimate from fovis it is recommended to add objects in the environment and give a small velocity to the robot**
