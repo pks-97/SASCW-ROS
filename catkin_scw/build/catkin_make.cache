@@ -1,0 +1,2 @@
+Real_Assembly:fovis/fovis:fovis/fovis_ros:libfovis:odom_to_trajectory:robot_pose_ekf
+-DCATKIN_DEVEL_PREFIX=/home/nidhi/catkin_scw/devel -DCMAKE_INSTALL_PREFIX=/home/nidhi/catkin_scw/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/nidhi/catkin_scw/devel
+
+Name: libfovis
+Description: Description of libfovis
+Version: 0.0.10
+Cflags: -I/home/nidhi/catkin_scw/src/libfovis/libfovis
+Libs: -L${prefix}/lib -lfovis
+Requires: 

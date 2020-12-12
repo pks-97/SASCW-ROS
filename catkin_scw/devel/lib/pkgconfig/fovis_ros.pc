@@ -1,0 +1,8 @@
+prefix=/home/nidhi/catkin_scw/devel
+
+Name: fovis_ros
+Description: Description of fovis_ros
+Version: 0.0.1
+Cflags: -I/home/nidhi/catkin_scw/devel/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime

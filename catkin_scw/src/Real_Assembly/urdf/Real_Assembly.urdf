@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="Real_Assembly">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.209887635699005 0.131328835860976 -0.299617885060806"
+        rpy="0 0 0" />
+      <mass
+        value="21.45414251209" />
+      <inertia
+        ixx="0.0737845881588852"
+        ixy="-6.44448057037844E-07"
+        ixz="9.29766076403339E-17"
+        iyy="1.32886531333523"
+        iyz="3.54955546067613E-19"
+        izz="1.30624475779064" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 -0.1"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 -0.1"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="limgf">
+    <inertial>
+      <origin
+        xyz="2.70616862252382E-15 1.11022302462516E-16 0"
+        rpy="0 0 0" />
+      <mass
+        value="12" />
+      <inertia
+        ixx="0.00260008714378625"
+        ixy="1.84314369322536E-18"
+        ixz="-1.04265441317024E-18"
+        iyy="0.0360008714378625"
+        iyz="-3.99603000470126E-18"
+        izz="0.0305828324604023" />
+    </inertial>
+    <visual name="ldrivewheel">
+      <origin
+        xyz="-0.35 0 0"
+        rpy="0 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/>         
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name="ldrivewheel">
+      <origin
+        xyz="-0.35 0 0"
+        rpy="0 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/> 
+      </geometry>
+
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.7</mu>
+            <mu2>150</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="ltrack">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+         <box size ="0.7 0.1 0.1" />       
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name="ltrack">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+         <box size ="0.7 0.1 0.1" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.7</mu>
+            <mu2>150</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="lfrontwheel">
+      <origin
+        xyz="0.35 0 0"
+        rpy="0 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/>         
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name="lfrontwheel">
+      <origin
+        xyz="0.35 0 0"
+        rpy="0 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/> 
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.7</mu>
+            <mu2>150</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </link>
+  <joint
+    name="limgf"
+    type="revolute">
+    <origin
+      xyz="0.2 0 0"
+      rpy="1.57 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="limgf" />
+    <axis
+      xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="0" velocity="0.00"/>
+   </joint>
+
+  <link name='rl'>
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.5" />
+      <inertia
+        ixx="0.001749"
+        ixy="1.84314369322536E-18"
+        ixz="0.00188"
+        iyy="0.012277"
+        iyz="-3.99603000470126E-18"
+        izz="0.010941" />
+    </inertial>
+    <visual name='front_right_flipper_visual_large_wheel_collision'>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/>          
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name='front_right_flipper_collision_large_wheel_collision'>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 0 0" />
+      <geometry>
+          <cylinder length="0.1" radius="0.05"/> 
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.7</mu>
+            <mu2>150</mu2>
+            
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <collision name='front_right_flipper_collision_small_wheel_collision_1'>
+      <origin
+        xyz="0.35 0 0"
+        rpy="1.57 0 0" />
+        <geometry>
+           <cylinder length="0.1" radius="0.03"/> 
+        </geometry>
+        <surface>
+           <friction>
+              <ode>
+                <mu>0.7</mu>
+                <mu2>150</mu2>
+                
+              </ode>
+           </friction>
+         </surface>
+     </collision>
+     <visual name='front_right_flipper_visual_small_wheel_collision'>
+      <origin
+        xyz="0.35 0 0"
+        rpy="1.57 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/>          
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name='front_right_flipper_collision_top_bar_collision_2'>
+      <origin
+        xyz="0.2 0 0.025"
+        rpy="0 0.05 0" />
+        <geometry>
+          <box size="0.35 0.1 0.02"/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+               <mu>0.7</mu>
+               <mu2>150</mu2>
+         
+            </ode>
+          </friction>
+        </surface>
+    </collision>
+    <visual name='front_right_flipper_visual_top_bar_visual_2'>
+      <origin
+        xyz="0.2 0 0.025"
+        rpy="0 0.05 0" />
+      <geometry>
+         <box size="0.4 0.1 0.02"/>       
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name='front_right_flipper_collision_bottom_bar_collision_3'>
+      <origin
+        xyz="0.2 0 -0.025"
+        rpy="0 -0.05 0" />
+        <geometry>
+         <box size="0.4 0.1 0.02"/>       
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+               <mu>0.7</mu>
+               <mu2>150</mu2>
+               
+            </ode>
+          </friction>
+        </surface>
+    </collision>
+    <collision name='front_right_flipper_collision_middle_bar_collision_4'>
+      <origin
+        xyz="0.225 0 0"
+        rpy="0 0 0" />
+        <geometry>
+         <box size="0.35 0.1 0.02"/>       
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+               <mu>0.7</mu>
+               <mu2>150</mu2>
+               
+            </ode>
+          </friction>
+        </surface>
+    </collision>
+    <visual name='front_right_flipper_visual_bottom_bar_visual_3'>
+     <origin
+        xyz="0.2 0 -0.025"
+        rpy="0 -0.05 0" />
+      <geometry>
+         <box size="0.4 0.1 0.02"/>       
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <visual name='front_right_flipper_visual_middle_bar_visual_4'>
+      <origin
+        xyz="0.225 0 0.0"
+        rpy="0 0 0" />
+      <geometry>
+         <box size="0.35 0.1 0.02"/>       
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name='rl' type='revolute'>
+    <origin
+      xyz="0.35 0 0"
+      rpy="1.57 0 0" />
+    <parent
+      link="rimgf" />
+    <child
+      link="rl" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="0" upper="0.7" effort="0.1" velocity="0.10"/>
+  </joint>
+
+   <link name='fl'>
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.5" />
+      <inertia
+        ixx="0.001749"
+        ixy="1.84314369322536E-18"
+        ixz="0.00188"
+        iyy="0.012277"
+        iyz="-3.99603000470126E-18"
+        izz="0.010941" />
+    </inertial>
+    <visual name='front_left_flipper_visual_large_wheel_collision'>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/>          
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name='front_left_flipper_collision_large_wheel_collision'>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 0 0" />
+      <geometry>
+          <cylinder length="0.1" radius="0.05"/> 
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.7</mu>
+            <mu2>150</mu2>
+            
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <collision name='front_left_flipper_collision_small_wheel_collision_1'>
+      <origin
+        xyz="0.35 0 0"
+        rpy="1.57 0 0" />
+        <geometry>
+           <cylinder length="0.1" radius="0.03"/> 
+        </geometry>
+        <surface>
+           <friction>
+              <ode>
+                <mu>0.7</mu>
+                <mu2>150</mu2>
+                
+              </ode>
+           </friction>
+         </surface>
+     </collision>
+     <visual name='front_left_flipper_visual_small_wheel_collision'>
+      <origin
+        xyz="0.35 0 0"
+        rpy="1.57 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/>          
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name='front_left_flipper_collision_top_bar_collision_2'>
+      <origin
+        xyz="0.2 0 0.025"
+        rpy="0 0.05 0" />
+        <geometry>
+          <box size="0.35 0.1 0.02"/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+               <mu>0.7</mu>
+               <mu2>150</mu2>
+         
+            </ode>
+          </friction>
+        </surface>
+    </collision>
+    <visual name='front_left_flipper_visual_top_bar_visual_2'>
+      <origin
+        xyz="0.2 0 0.025"
+        rpy="0 0.05 0" />
+      <geometry>
+         <box size="0.4 0.1 0.02"/>       
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name='front_left_flipper_collision_bottom_bar_collision_3'>
+      <origin
+        xyz="0.2 0 -0.025"
+        rpy="0 -0.05 0" />
+        <geometry>
+         <box size="0.4 0.1 0.02"/>       
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+               <mu>0.7</mu>
+               <mu2>150</mu2>
+               
+            </ode>
+          </friction>
+        </surface>
+    </collision>
+    <collision name='front_left_flipper_collision_middle_bar_collision_4'>
+      <origin
+        xyz="0.225 0 0"
+        rpy="0 0 0" />
+        <geometry>
+         <box size="0.35 0.1 0.02"/>       
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+               <mu>0.7</mu>
+               <mu2>150</mu2>
+               
+            </ode>
+          </friction>
+        </surface>
+    </collision>
+    <visual name='front_left_flipper_visual_bottom_bar_visual_3'>
+     <origin
+        xyz="0.2 0 -0.025"
+        rpy="0 -0.05 0" />
+      <geometry>
+         <box size="0.4 0.1 0.02"/>       
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <visual name='front_left_flipper_visual_middle_bar_visual_4'>
+      <origin
+        xyz="0.225 0 0.0"
+        rpy="0 0 0" />
+      <geometry>
+         <box size="0.35 0.1 0.02"/>       
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name='fl' type='revolute'>
+    <origin
+      xyz="0.35 0 0"
+      rpy="1.57 0 0" />
+    <parent
+      link="limgf" />
+    <child
+      link="fl" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="0" upper="0.7" effort="0.1" velocity="0.10"/>
+  </joint>
+  <link
+    name="rimgf">
+    <inertial>
+      <origin
+        xyz="2.70616862252382E-15 1.11022302462516E-16 2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="12" />
+      <inertia
+        ixx="0.00280008714378625"
+        ixy="1.84314369322536E-18"
+        ixz="-1.04265441317024E-18"
+        iyy="0.0308714378625"
+        iyz="-3.99603000470126E-18"
+        izz="0.03" />
+    </inertial>
+    <visual name="rtrack">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size = "0.7 0.1 0.1" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name="rtrack">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <box size = "0.7 0.1 0.1" />
+      </geometry>
+      
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.7</mu>
+            <mu2>150</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="rdrivewheel">
+      <origin
+        xyz="-0.35 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name="rdrivewheel">
+      <origin
+        xyz="-0.35 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+
+
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.7</mu>
+            <mu2>150</mu2>
+          </ode>
+        </friction>
+      </surface>
+
+    </collision>
+    
+    <visual name= "rfrontwheel">
+      <origin
+        xyz="0.35 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision name="rfrontwheel">
+      <origin
+        xyz="0.35 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+
+
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.7</mu>
+            <mu2>150</mu2>
+          </ode>
+        </friction>
+      </surface>
+
+    </collision>
+  </link>
+  <joint
+    name="rimgf"
+    type="revolute">
+    <origin
+      xyz="0.2 0.65 0"
+      rpy="1.57 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rimgf" />
+    <axis
+      xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="0" velocity="0.00"/>
+   </joint>
+
+<link
+    name="fr">
+    <inertial>
+      <origin
+        xyz="2.70616862252382E-15 1.11022302462516E-16 2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.767359308966555" />
+      <inertia
+        ixx="0.00180008714378625"
+        ixy="1.84314369322536E-18"
+        ixz="-1.04265441317024E-18"
+        iyy="0.00180008714378625"
+        iyz="-3.99603000470126E-18"
+        izz="0.00255828324604023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <box size="0.1 0.1 0.1"/>
+      </geometry>
+
+
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.5</mu>
+            <mu2>3.19</mu2>
+          </ode>
+        </friction>
+      </surface>
+
+    </collision>
+  </link>
+  <joint
+    name="fr"
+    type="revolute">
+    
+    <origin
+      xyz="0.3 0.2 0.00848870681082972"
+      rpy="3.14159265358978 0 0" />
+    <parent
+      link="rimgf" />
+    <child
+      link="fr" />
+    <axis
+      xyz="0 0 1" />
+    <limit lower="-1e+16" upper="1e+16" effort="0.0" velocity="0.00"/>
+  </joint>
+<link
+    name="rr">
+    <inertial>
+      <origin
+        xyz="2.70616862252382E-15 1.11022302462516E-16 2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.767359308966555" />
+      <inertia
+        ixx="0.00180008714378625"
+        ixy="1.84314369322536E-18"
+        ixz="-1.04265441317024E-18"
+        iyy="0.00180008714378625"
+        iyz="-3.99603000470126E-18"
+        izz="0.00255828324604023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <box size="0.1 0.1 0.1"/>
+      </geometry>
+
+
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.5</mu>
+            <mu2>3.19</mu2>
+          </ode>
+        </friction>
+      </surface>
+
+    </collision>
+  </link>
+  <joint
+    name="rr"
+    type="revolute">
+    
+    <origin
+      xyz="-0.5 0.2 0.00848870681082972"
+      rpy="3.14159265358978 0 0" />
+    <parent
+      link="rimgf" />
+    <child
+      link="rr" />
+    <axis
+      xyz="0 0 1" />
+    <limit lower="-1e+16" upper="1e+16" effort="0.0" velocity="0.00"/>
+  </joint>
+
+  <link
+    name="seat_base">
+    <inertial>
+      <origin
+        xyz="0.13070677596664 0.0591721063764107 0.160392579328243"
+        rpy="0 0 0" />
+      <mass
+        value="9.99941187073815" />
+      <inertia
+        ixx="0.392687593262726"
+        ixy="-0.109960264110025"
+        ixz="0.00237498539547659"
+        iyy="0.518282720050582"
+        iyz="0.00231311557741671"
+        izz="0.411843053503668" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/seat_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/seat_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="seat_base"
+    type="fixed">
+    <origin
+      xyz="0.021338 0.46113 0.12303"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="seat_base" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="seat_shaft">
+    <inertial>
+      <origin
+        xyz="0.437663404508652 -0.211564254923608 -0.116942447712383"
+        rpy="0 0 0" />
+      <mass
+        value="0.178744494109947" />
+      <inertia
+        ixx="0.00406992975387134"
+        ixy="0"
+        ixz="1.02664136696231E-20"
+        iyy="0.00406992975387134"
+        iyz="-7.5387578213068E-24"
+        izz="3.60371243187417E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/seat_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/seat_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="seat_shaft"
+    type="fixed">
+    <origin
+      xyz="-0.178182062409942 0.499999999999999 0.194205388784191"
+      rpy="0 0 0.245712975683216" />
+    <parent
+      link="seat_base" />
+    <child
+      link="seat_shaft" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+   <link
+    name="seat">
+    <inertial>
+      <origin
+        xyz="0.290851079200038 -0.0642848034196394 0.130086029033119"
+        rpy="0 0 0" />
+      <mass
+        value="11.5620289047973" />
+      <inertia
+        ixx="0.253867296205353"
+        ixy="-0.0681623150791914"
+        ixz="-5.75707407012181E-05"
+        iyy="0.429806744081254"
+        iyz="3.57664098032124E-06"
+        izz="0.40737304251517" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/seat.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/seat.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="seat"
+    type="revolute">
+    <origin
+      xyz="0.0425205885700615 0.0178287837303983 -0.169327362493408"
+      rpy="0 0 -0.179479829759404" />
+    <limit lower="0.0" upper="1.57" effort="0" velocity="0"/>
+    <parent
+      link="seat_shaft" />
+    <child
+      link="seat" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <transmission name="seat_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="seat">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>  
+    </joint>
+    <actuator name="seat_Motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> 
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+
+
+  <link
+    name="lslider">
+    <inertial>
+      <origin
+        xyz="-0.10219680001211 0.168616636573953 -0.411134018145097"
+        rpy="0 0 0" />
+      <mass
+        value="0.538723517969044" />
+      <inertia
+        ixx="0.00154488524985273"
+        ixy="9.83340211437564E-08"
+        ixz="-1.02465885769452E-19"
+        iyy="0.00135552294740132"
+        iyz="-5.74386831462997E-21"
+        izz="0.000816936921765391" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/lslider.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/lslider.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lslider"
+    type="fixed">
+    <origin
+      xyz="-0.0213382562427508 -0.123030538506444 0.461134018145097"
+      rpy="0 0 0" />
+    <parent
+      link="seat_base" />
+    <child
+      link="lslider" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rslider">
+    <inertial>
+      <origin
+        xyz="-0.045593004819271 0.0455860980675084 0.020145622176332"
+        rpy="0 0 0" />
+      <mass
+        value="0.538723517969045" />
+      <inertia
+        ixx="0.00154488524985273"
+        ixy="9.83340211437548E-08"
+        ixz="-8.83138938296809E-20"
+        iyy="0.00135552294740132"
+        iyz="-4.89767860438925E-20"
+        izz="0.000816936921765391" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/rslider.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/rslider.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rslider"
+    type="fixed">
+    <origin
+      xyz="-0.0779420514355905 0 0.239854377823668"
+      rpy="0 0 0" />
+    <parent
+      link="seat_base" />
+    <child
+      link="rslider" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="slider_shaft">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 -2.77555756156289E-17 -0.03422531176701"
+        rpy="0 0 0" />
+      <mass
+        value="0.178744494109947" />
+      <inertia
+        ixx="0.00406992975387136"
+        ixy="2.53097473449156E-36"
+        ixz="-9.89830591075583E-19"
+        iyy="0.00406992975387136"
+        iyz="9.68707891561013E-21"
+        izz="3.60371243187417E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/slider_shaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/slider_shaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="slider_shaft"
+    type="fixed">
+    <origin
+      xyz="-0.0450278792381198 0.0658345667414153 -0.111725161075101"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="rslider" />
+    <child
+      link="slider_shaft" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+<link
+    name="rarmseat">
+    <inertial>
+      <origin
+        xyz="-0.137854454859724 -0.136583501692387 0.00999999999999995"
+        rpy="0 0 0" />
+      <mass
+        value="0.761573913301099" />
+      <inertia
+        ixx="0.00120824112369819"
+        ixy="0.0048835338389527"
+        ixz="-2.05598005362381E-19"
+        iyy="0.0253466648829565"
+        iyz="3.761376038139E-20"
+        izz="0.0265041344124346" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/rarmseat.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/rarmseat.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarmseat"
+    type="fixed">
+    <origin
+      xyz="0.0336307962141141 0.185459845826114 0.158129216748567"
+      rpy="3.14159265358979 0 0.662745754251332" />
+    <parent
+      link="slider_shaft" />
+    <child
+      link="rarmseat" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+   <link
+    name="seatshaftfront">
+    <inertial>
+      <origin
+        xyz="-0.0985271727786901 -0.341676800643241 -0.0531441113648711"
+        rpy="0 0 0" />
+      <mass
+        value="0.178744494109947" />
+      <inertia
+        ixx="0.00406992975387135"
+        ixy="0"
+        ixz="-9.11069422472293E-21"
+        iyy="0.00406992975387135"
+        iyz="-6.40268965548207E-21"
+        izz="3.60371243187417E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/seatshaftfront.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/seatshaftfront.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="seatshaftfront"
+    type="fixed">
+    <origin
+      xyz="-0.14111157113081 -0.454916432446204 0.224089582001714"
+      rpy="0 0 2.72811061142027" />
+    <parent
+      link="rarmseat" />
+    <child
+      link="seatshaftfront" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="larmseat">
+    <inertial>
+      <origin
+        xyz="-0.137854454859581 -0.136583501692253 0.00999999999999998"
+        rpy="0 0 0" />
+      <mass
+        value="0.761573913301098" />
+      <inertia
+        ixx="0.00120824112369563"
+        ixy="0.00488353383894635"
+        ixz="-4.39902042192204E-18"
+        iyy="0.025346664882959"
+        iyz="7.93598451668341E-19"
+        izz="0.0265041344124345" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/larmseat.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/larmseat.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larmseat"
+    type="fixed">
+    <origin
+      xyz="0.0336307962138782 0.185459845826171 -0.191870783251433"
+      rpy="3.14159265358979 0 0.662745754251591" />
+    <parent
+      link="slider_shaft" />
+    <child
+      link="larmseat" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="frontmshaft">
+    <inertial>
+      <origin
+        xyz="0.61437095223077 0.133739211977767 -0.246267077411583"
+        rpy="0 0 0" />
+      <mass
+        value="0.0706858347057704" />
+      <inertia
+        ixx="0.00477173562910641"
+        ixy="3.37445951098918E-39"
+        ixz="-1.19500194332743E-36"
+        iyy="0.00477173562910641"
+        iyz="-3.07345772260895E-37"
+        izz="8.8357293382213E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/frontmshaft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/frontmshaft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontmshaft"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="frontmshaft" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+ 
+  <link
+    name="actuatorbase">
+    <inertial>
+      <origin
+        xyz="-0.000854154863385248 0.162450406952896 0.0574613287386411"
+        rpy="0 0 0" />
+      <mass
+        value="2.85236705711202" />
+      <inertia
+        ixx="0.0374926003846532"
+        ixy="-3.82691861784211E-11"
+        ixz="1.00440965216016E-16"
+        iyy="0.0141992522347615"
+        iyz="-1.98674563872966E-16"
+        izz="0.042873718945787" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/actuatorbase.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/actuatorbase.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="actuatorbase"
+    type="fixed">
+    <origin
+      xyz="0.450840258681597 0.301947582836372 0.420538638759965"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="actuatorbase" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="actuator">
+    <inertial>
+      <origin
+        xyz="6.66133814775094E-16 5.55111512312578E-17 0.185"
+        rpy="0 0 0" />
+      <mass
+        value="0.145298660228529" />
+      <inertia
+        ixx="0.00166942106491737"
+        ixy="-4.43928895667978E-38"
+        ixz="-5.7030622083115E-18"
+        iyy="0.00166942106491737"
+        iyz="-2.02586396626932E-36"
+        izz="2.36110322871359E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/actuator.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/actuator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="actuator"
+    type="fixed">
+    <origin
+      xyz="-0.00820355422637542 -0.0211308538099861 -0.213062169550757"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="actuatorbase" />
+    <child
+      link="actuator" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="actuator_inside">
+    <inertial>
+      <origin
+        xyz="0.207831999852708 0.00368946042084284 8.24641610552845E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.053577286403709" />
+      <inertia
+        ixx="1.43429296420453E-06"
+        ixy="1.07465106744899E-07"
+        ixz="1.05248918756066E-10"
+        iyy="0.00142766175276826"
+        iyz="-7.8755049380995E-13"
+        izz="0.00142767368490085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/actuator_inside.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Real_Assembly/meshes/actuator_inside.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="actuator_inside"
+    type="fixed">
+    <origin
+      xyz="0 -0.00368181818181817 0.373063298019189"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="actuator" />
+    <child
+      link="actuator_inside" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+
+  <link
+    name="imu_link">
+    <inertial>
+      <origin
+        xyz="2.44249065417534E-15 0 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.767359308966554" />
+      <inertia
+        ixx="0.00180008714378625"
+        ixy="0.087890977618477E-19"
+        ixz="0.47649531791744E-18"
+        iyy="0.00180008714378625"
+        iyz="0.18951507272486E-19"
+        izz="0.00255828324604022" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/> 
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+         <cylinder length="0.1" radius="0.05"/>        
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_link"
+    type="fixed">
+    <origin
+      xyz="0 0.2 0.25"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+  <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>30.0</updateRateHZ>
+        <gaussianNoise>0.01</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libsimple.so" name="simple_tracked_vehicle">
+                <body>base_link</body>
+                <left_track>limgf</left_track>
+                <right_track>rimgf</right_track>
+                <left_flipper>fl</left_flipper>
+                <left_flipper>rl</left_flipper>
+                <right_flipper>fr</right_flipper>
+                <right_flipper>rr</right_flipper>
+                <track_mu>2</track_mu>
+                <track_mu2>0.5</track_mu2>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+       <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <link name="camera_link" >
+       <inertial>
+        <origin xyz="0.8 0.24765 0.5" rpy="0 0 0"/>
+        <mass  
+          value="0.1" />
+        <inertia
+              ixx="0.00909390367998844"
+              ixy="1.1020457476751E-38"
+              ixz="-3.89648748886894E-37"
+              iyy="0.00909390367998844"
+              iyz="-1.00236454621529E-36"
+              izz="4.71155797028266E-06"/>
+       </inertial>
+       <visual>
+         <geometry>
+          <mesh filename="package://Real_Assembly/meshes/kinect.dae"/>
+         </geometry>
+         <material name="blue"/>
+        </visual>
+       <collision>
+         <geometry>
+           <mesh filename="package://Real_Assembly/meshes/kinect.dae"/>
+         </geometry>
+       </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+      <origin xyz="0.8 0.24765 0.5" rpy="0 0 0"/>
+      <parent
+       link="base_link"/>
+      <child
+       link="camera_link"/>
+      <axis
+       xyz="0 0 0" />
+  </joint>
+  <link name="camera_frame"/>
+  <joint name="camera_frame" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+      <parent
+       link="camera_link"/>
+      <child
+       link="camera_frame"/>
+      <axis
+       xyz="0 0 0" />
+  </joint>
+  <gazebo reference="camera_link">
+       <sensor name="camera_link" type="depth">
+        <update_rate>10</update_rate>
+        <camera>
+          <horizontal_fov>1.047198</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <depth_camera>
+          </depth_camera>
+          <clip>
+            <near>0.05</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <plugin name="camera_plugin" filename="libgazebo_ros_openni_kinect.so">
+          <baseline>0.2</baseline>
+          <alwaysOn>true</alwaysOn>
+          <!-- Keep this zero, update_rate in the parent <sensor> tag
+            will control the frame rate. -->
+          <updateRate>10.0</updateRate>
+          <cameraName>camera</cameraName>
+          <imageTopicName>/camera/rgb/image_raw</imageTopicName>
+          <cameraInfoTopicName>/camera/rgb/camera_info</cameraInfoTopicName>
+          <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+          <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
+          <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+          <frameName>camera_frame</frameName>
+          <pointCloudCutoff>0.5</pointCloudCutoff>
+          <pointCloudCutoffMax>100.0</pointCloudCutoffMax>
+          <distortionK1>0</distortionK1>
+          <distortionK2>0</distortionK2>
+          <distortionK3>0</distortionK3>
+          <distortionT1>0</distortionT1>
+          <distortionT2>0</distortionT2>
+          <CxPrime>0</CxPrime>
+          <Cx>0</Cx>
+          <Cy>0</Cy>
+          <focalLength>0</focalLength>
+          <hackBaseline>0.07</hackBaseline>
+        </plugin>
+        <alwaysOn>true</alwaysOn>
+      </sensor>
+  </gazebo>
+
+</robot>

@@ -1,0 +1,27 @@
+<launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch"/>
+    <arg name="verbose" value="true"/>
+    <arg name="urdf" default="$(find Real_Assembly)/urdf/Real_Assembly.urdf" />
+    <param name="robot_description" textfile="$(arg urdf)" />
+    <param name="use_sim_time" type="bool" value="True"/>
+    <arg name="world_name" value="$(find Real_Assembly)/world/track.world"/>
+    <arg name="robot_name" default="Real_Assembly"/>
+  <node
+    name="RA_spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Real_Assembly)/urdf/Real_Assembly.urdf -urdf -model Real_Assembly"
+    output="screen" />
+    <rosparam file="$(find Real_Assembly)/config/controller.yaml" command="load" />
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+  <node 
+     name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+  <node
+    name="joint_state_publisher"  pkg="joint_state_publisher" type="joint_state_publisher" />   
+</launch>
+

@@ -1,0 +1,8 @@
+prefix=/home/nidhi/catkin_scw/devel
+
+Name: Real_Assembly
+Description: Description of Real_Assembly
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
