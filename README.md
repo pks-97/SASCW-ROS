@@ -43,3 +43,19 @@ export GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH
 cd ..
 roslaunch Real_Assembly gazebo.launch
 ```
+**For visual state estimation and visualizing path follow the steps below**
+Run the following commands in different terminals - 
+```
+roslaunch fovis_ros fovis_hydro.launch
+```
+```
+roslaunch robot_pose_ekf robot_pose_ekf.launch
+```
+```
+roslaunch odom_to_trajectory create_trajectory.launch
+```
+```
+rosrun rviz rviz
+```
+In rviz set the **fixed frame = odom** and the **reference frame = base_link**
+
