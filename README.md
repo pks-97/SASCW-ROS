@@ -59,7 +59,7 @@ roslaunch odom_to_trajectory create_trajectory.launch
 rosrun rviz rviz
 ```
 In rviz set the **fixed frame = odom** and the **reference frame = base_link**
-## Controling The Robot
+## Controlling The Robot
 The velocity can be given using the command -
 ```
 rostopic pub /simple_traked/cmd_vel_twist geometry_msgs/Twist -- '[0.0,0.0,0.0]'[0.0,0.0,0.1]'
