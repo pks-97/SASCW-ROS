@@ -44,6 +44,7 @@ cd ..
 roslaunch Real_Assembly gazebo.launch
 ```
 **For visual state estimation and visualizing path follow the steps below**
+
 Run the following commands in different terminals - 
 ```
 roslaunch fovis_ros fovis_hydro.launch
