@@ -15,3 +15,12 @@ In Ununtu 16.04,
 - [**Gazebo 9**](http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=9.0)
 - [**Rviz**](https://howtoinstall.co/en/ubuntu/xenial/rviz)
 - [**Python 3**](https://www.python.org/download/releases/3.0/)
+
+## Quick Startup
+To run the ROS Wrapper for the Gazebo Track plugin follow the steps below. 
+```
+git clone https://github.com/pks-97/SASCW-ROS.git
+```
+```
+cd catkin_scw
+```
