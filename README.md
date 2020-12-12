@@ -32,10 +32,10 @@ catkin_make
 ```
 source devel/setup.bash
 ```
+The next steps points the gazebo plugin path to the plugin executable stored inside the build folder
 ```
 cd build
 ```
-The next step points the gazebo plugin path to the plugin executable stored inside the build folder
 ```
 export GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH 
 ```
