@@ -18,12 +18,14 @@ In Ununtu 16.04,
 
 ## Quick Startup
 To run the ROS Wrapper for the Gazebo Track plugin follow the steps below. 
+Clone the repository
 ```
 git clone https://github.com/pks-97/SASCW-ROS.git
 ```
 ```
 cd catkin_scw
 ```
+Build the entire package
 ```
 catkin_make
 ```
@@ -33,10 +35,11 @@ source devel/setup.bash
 ```
 cd build
 ```
+The next step points the gazebo plugin path to the plugin executable stored inside the build folder
 ```
-GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH 
+export GAZEBO_PLUGIN_PATH=$PWD:$GAZEBO_PLUGIN_PATH 
 ```
 ```
 cd ..
-cd Real_Assembly gazebo.launch
+roslaunch Real_Assembly gazebo.launch
 ```
