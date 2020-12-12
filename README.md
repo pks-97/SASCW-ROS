@@ -77,5 +77,9 @@ The path made by visual odometry is marked by the **red** trajectory and the **g
   <img width="300" height="300" src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/path.jpeg">
 </p>
 
+<p align="center">
+  <img width="300" height="300" src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/video.gif.gif">
+</p>
+
 ## Note
 **__For getting a good odometry estimate from fovis it is recommended to add objects in the environment and give a small velocity to the robot__**
