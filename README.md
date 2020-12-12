@@ -69,16 +69,10 @@ The plugin is configured such that that the linear velocity can be given in line
 ## Results
 The path made by visual odometry is marked by the **red** trajectory and the **green** tracjectory marks the combined path.
 
-<p align="center">
-  <img width="300" height="300" src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/Robot_Path.jpeg">
-</p>
-
-<p align="center">
-  <img width="300" height="300" src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/path.jpeg">
-</p>
-
-<p align="center">
-  <img width="300" height="300" src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/video.gif.gif">
+<p float="left">
+  <img src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/video.gif.gif" width="100"/>
+  <img src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/path.jpeg" width="100" /> 
+  <img src="https://github.com/pks-97/SASCW-ROS/blob/main/catkin_scw/Robot_Path.jpeg" width="100" />
 </p>
 
 ## Note
