@@ -59,6 +59,13 @@ roslaunch odom_to_trajectory create_trajectory.launch
 rosrun rviz rviz
 ```
 In rviz set the **fixed frame = odom** and the **reference frame = base_link**
+## Controling The Robot
+The velocity can be given using the command -
+```
+rostopic pub /simple_traked/cmd_vel_twist geometry_msgs/Twist -- '[0.0,0.0,0.0]'[0.0,0.0,0.1]'
+```
+The plugin is configured such that that the linear velocity can be given in linear.x and the angular velocity in angular.z
+
 ## Results
 The path made by visual odometry is marked by the **red** trajectory and the **green** tracjectory marks the combined path.
 
