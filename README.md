@@ -77,3 +77,7 @@ The path made by visual odometry is marked by the **red** trajectory and the **g
 
 ## Note
 **__For getting a good odometry estimate from fovis it is recommended to add objects in the environment and give a small velocity to the robot__**
+
+## Related Work
+
+For more information regarding the Semi Autonomous Stair Climbing Wheelchair you can refer this [post](https://sites.google.com/itbhu.ac.in/sascw/home) and this [Poster](https://ras.papercept.net/proceedings/AIM20/0505.pdf) presented at the [Advanced Intelligent Mechatronics, Conference 2020](http://aim2020.org/).
